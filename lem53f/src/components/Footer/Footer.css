@@ -1,0 +1,37 @@
+/* Az alkalmazás alsó lábléce */
+.app-footer {
+    /* Elválasztás a fő tartalomtól */
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  
+    /* Vékony felső szegély, hasonlóan a header alsó szegélyéhez */
+    border-top: 2px solid #ddd;
+  
+    /* Szöveg középre igazítása */
+    text-align: center;
+  
+    /* Visszafogott, halványszürke szín */
+    color: #666;
+  
+    /* Kisebb betűméret, hogy ne vonja el a hangsúlyt a fő tartalomról */
+    font-size: 0.9rem;
+  
+    /* A háttér maradhat a globális (#f4f4f4), hogy ne üssön el a laptól */
+  }
+  
+  /* A lábléc szöveg elemének opcionális finomhangolása */
+  .footer-text {
+    margin: 0;
+  }
+  
+  /* Sötét mód (dark mode) támogatása */
+  @media (prefers-color-scheme: dark) {
+    .app-footer {
+      /* Sötétebb szegély a sötét háttérhez igazítva */
+      border-top-color: #555;
+  
+      /* Világosabb szöveg a jobb olvashatóságért */
+      color: #ccc;
+    }
+  }

@@ -1,0 +1,34 @@
+/* Fő üdvözlő cím (Home oldal tetején) */
+.welcome-title {
+  /* Szöveg középre igazítása */
+  text-align: center;
+  /* Nagyobb betűméret a kiemelt címhez */
+  font-size: 2.5rem;
+  /* Alapszín világos módban (sötét szürke) */
+  color: #333;
+}
+
+/* Üdvözlő alcím (fő cím alatti rövid leírás) */
+.welcome-subtitle {
+  /* Szöveg középre igazítása a címmel egységesen */
+  text-align: center;
+  /* Kisebb betűméret, mint a fő címnél */
+  font-size: 1.2rem;
+  /* Halványabb szürke szín az alcímhez */
+  color: #555;
+  /* Alsó margó, hogy elváljon a tartalomtól (pl. gombok, lista) */
+  margin-bottom: 2rem;
+}
+
+/* Sötét módhoz (dark mode) tartozó színbeállítások */
+@media (prefers-color-scheme: dark) {
+  .welcome-title {
+    /* Világos szöveg a sötét háttéren */
+    color: #f4f4f4;
+  }
+
+  .welcome-subtitle {
+    /* Kissé sötétebb, de még mindig világos szürke árnyalat az alcímhez */
+    color: #ccc;
+  }
+}

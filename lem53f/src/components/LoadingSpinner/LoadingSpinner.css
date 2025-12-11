@@ -1,0 +1,110 @@
+/* Betöltést jelző (loading) kör alakú spinner alap stílusa */
+.loader {
+  /* Alap fontméret – itt főleg az em egységekhez viszonyítás miatt használjuk */
+  font-size: 10px;
+  /* Felső alsó margó + vízszintesen középre igazítás */
+  margin: 50px auto;
+  /* A szöveget nagyon balra tolja, így vizuálisan eltűnik (csak a spinner látszik),
+     de a markupban továbbra is jelen van – hasznos képernyőolvasóknak. */
+  text-indent: -9999em;
+  /* A spinner külső mérete (szélesség és magasság) */
+  width: 11em;
+  height: 11em;
+  /* Tökéletes kör alak */
+  border-radius: 50%;
+  /* Alap háttérszín (kék), a gradient kiindulópontja */
+  background: #007bff;
+
+  /* Különböző böngészők prefixeivel ellátott lineáris gradientek.
+     A spinner egyik fele kék, a másik fokozatosan áttetsző, így forgatáskor
+     "pörgő" hatást kelt. */
+  background: -moz-linear-gradient(left, #007bff 10%, rgba(0, 123, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #007bff 10%, rgba(0, 123, 255, 0) 42%);
+  background: -o-linear-gradient(left, #007bff 10%, rgba(0, 123, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #007bff 10%, rgba(0, 123, 255, 0) 42%);
+  background: linear-gradient(to right, #007bff 10%, rgba(0, 123, 255, 0) 42%);
+
+  /* Az after/before pszeudo-elemek pozicionálásához szükséges alap beállítás */
+  position: relative;
+
+  /* A spinner forgatásának animációja (WebKit prefix + standard) */
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+
+  /* GPU-s gyorsítás kikényszerítése néhány böngészőben a simább animációért */
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* A spinner "kitöltött" részének felső bal szegmense */
+.loader:before {
+  /* A külső kör felének mérete (szélesség/magasság) */
+  width: 50%;
+  height: 50%;
+  /* Kék háttérszín (megegyezik az alap színnel) */
+  background: #007bff;
+  /* Csak a bal felső negyed lekerekítése:
+     így egy negyed kör szegmenst kapunk. */
+  border-radius: 100% 0 0 0;
+  /* Absolút pozicionálás a szülőhöz (loader) képest */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Tartalom létrehozása (pszeudo-elem megjelenítéséhez kötelező) */
+  content: '';
+}
+
+/* A spinner belső, világos köre */
+/* Ez hozza létre a "gyűrű" hatást a külső kékkel kombinálva */
+.loader:after {
+  /* A belső kör relatív mérete (a külsőhöz képest) */
+  background: #f4f4f4;
+  width: 75%;
+  height: 75%;
+  /* Kör alak */
+  border-radius: 50%;
+  content: '';
+  /* Középre igazítás a szülőhöz képest (top/left/bottom/right + margin: auto) */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Sötét mód: a belső kör háttérszínét a sötét háttérhez igazítjuk */
+@media (prefers-color-scheme: dark) {
+  .loader:after {
+    background: #242424;
+  }
+}
+
+/* WebKit prefixelt kulcskockás animáció (spinner forgása) */
+@-webkit-keyframes load3 {
+  0% {
+    /* Kezdő állapot: nincs elforgatás */
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    /* Végállapot: 360 fokos elforgatás (teljes kör) */
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Standard kulcskockás animáció (spinner forgása) */
+@keyframes load3 {
+  0% {
+    /* Kezdő állapot: nincs elforgatás */
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    /* Végállapot: 360 fokos elforgatás (teljes kör) */
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

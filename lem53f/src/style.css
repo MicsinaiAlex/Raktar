@@ -1,0 +1,114 @@
+/* Globális stílusok, amelyek az egész alkalmazásra érvényesek */
+:root {
+	/* Alap betűcsalád beállítása: modern sans-serif stack */
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	/* Alap sortávolság */
+	line-height: 1.5;
+	/* Alap fontvastagság */
+	font-weight: 400;
+  
+	/* Automatikus világos/sötét színséma támogatás */
+	color-scheme: light dark;
+	/* Alap szövegszín (világos módban) */
+	color: #333;
+	/* Alap háttérszín (világos módban) */
+	background-color: #f4f4f4;
+  
+	/* Tipográfia és renderelés finomhangolása a jobb olvashatóságért */
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+  
+/* Az egész oldal (body) alapstílusai */
+body {
+	/* Alap margó eltávolítása (böngésző default reset) */
+	margin: 0;
+	/* Biztosítjuk, hogy a body legalább a teljes viewport magasságát elfoglalja */
+	min-height: 100vh;
+}
+  
+/* Az alkalmazás gyökérelemének (root container) stílusai */
+#app {
+	/* Maximális szélesség, hogy ne nyúljon túl nagyra nagy monitorokon */
+	max-width: 1280px;
+	/* Középre igazítás vízszintesen */
+	margin: 0 auto;
+	/* Belső margó, hogy ne lógjon a tartalom közvetlenül a széleknél */
+	padding: 2rem;
+}
+  
+/* Alap gombstílus az alkalmazásban használt összes <button>-hoz */
+button {
+	/* Lekerekített sarkok */
+	border-radius: 8px;
+	/* Alapértelmezett keret eltávolítása / átszabása */
+	border: 1px solid transparent;
+	/* Belső margó: kattintható felület növelése */
+	padding: 0.6em 1.2em;
+	/* Betűméret és -vastagság a gombokhoz */
+	font-size: 1em;
+	font-weight: 500;
+	/* Örökli a szülő betűcsaládját (összhang a többi elemmel) */
+	font-family: inherit;
+	/* Alap gombszín (kék) */
+	background-color: #007bff;
+	/* Gomb szöveg színe (fehér) */
+	color: #ffffff;
+	/* Kurzor jelzi, hogy kattintható elemről van szó */
+	cursor: pointer;
+	/* Finom átmenet hover állapotban a színváltáshoz */
+	transition: border-color 0.25s, background-color 0.25s;
+}
+
+/* Gomb hover állapota: sötétebb kék árnyalat */
+button:hover {
+	background-color: #0056b3;
+}
+
+/* Gomb fókuszállapot (billentyűzetről történő navigáció támogatása) */
+button:focus,
+button:focus-visible {
+	/* Jól látható fókuszkeret az akadálymentesség érdekében */
+	outline: 4px auto -webkit-focus-ring-color;
+}
+  
+/* Linkek alap stílusa */
+a {
+	/* Félkövér betűvastagság a jobb kiemelésért */
+	font-weight: 500;
+	/* Linkek színe (kék) */
+	color: #007bff;
+	/* Alapértelmezett aláhúzás eltávolítása */
+	text-decoration: inherit;
+}
+
+/* Link hover állapota: sötétebb kék árnyalat */
+a:hover {
+	color: #0056b3;
+}
+  
+/* Sötét módhoz (dark mode) kapcsolódó stílusok */
+/* A `prefers-color-scheme: dark` media query a felhasználó OS szintű beállítását veszi figyelembe */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Sötét háttér és világos szöveg */
+		color: #f4f4f4;
+		background-color: #242424;
+	}
+
+	/* Gombok sötét módban: sötét háttér, világos szöveg, kék keret */
+	button {
+		background-color: #1a1a1a;
+		color: #f4f4f4;
+		border-color: #007bff;
+	}
+
+	/* Hover állapot sötét módban: világosabb háttér, sötétebb keret */
+	button:hover {
+		background-color: #333;
+		border-color: #0056b3;
+	}
+}

@@ -1,0 +1,78 @@
+/* Kereső űrlap fő konténere */
+.search-form {
+  /* Rugalmas elrendezés: mezők egymás mellett/ alatt, rugalmasan tördelve */
+  display: flex;
+  flex-wrap: wrap;
+  /* Mezők közötti térköz */
+  gap: 1.5rem;
+  /* Belső margó az űrlap tartalma körül */
+  padding: 1.5rem;
+  /* Világos háttér a kártyaszerű megjelenéshez (világos módban) */
+  background-color: #fff;
+  /* Lekerekített sarkok */
+  border-radius: 8px;
+  /* Alsó margó, hogy az űrlap elváljon az alatta lévő tartalomtól */
+  margin-bottom: 2rem;
+  /* Finom szegély az űrlap köré */
+  border: 1px solid #ddd;
+}
+
+/* Egy mezőt (label + input) tartalmazó blokk */
+.form-group {
+  /* Rugalmas szélesség:
+     - nőhet (`flex-grow: 1`),
+     - zsugorodhat (`flex-shrink: 1`),
+     - minimum szélessége 200px (`flex-basis: 200px`) */
+  flex: 1 1 200px;
+  /* Label és input egymás alatt (oszlopirány) */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mezőcímke (label) stílusa */
+.form-group label {
+  /* Alsó margó, hogy ne tapadjon az inputhoz */
+  margin-bottom: 0.5rem;
+  /* Félkövér, hogy jobban kiemelkedjen */
+  font-weight: 500;
+}
+
+/* Szövegbeviteli mezők (input) stílusa */
+.form-group input {
+  /* Belső margó a szöveg körül */
+  padding: 0.75rem;
+  /* Vékony szegély */
+  border: 1px solid #ccc;
+  /* Enyhe sarkítás */
+  border-radius: 4px;
+  /* Kényelmes olvasható betűméret */
+  font-size: 1rem;
+}
+
+/* Keresés gomb stílusa és elhelyezése */
+.search-button {
+  /* A gomb teljes szélességű, új sorban jelenjen meg az űrlap alján */
+  flex-basis: 100%; /* A gomb teljes szélességű új sorban */
+  /* Felső margó, hogy elkülönüljön az input mezőktől */
+  margin-top: 1rem;
+  /* Kék háttérszín a kiemeléshez (felülírja az alap gomb stílust, ha van) */
+  background-color: #007bff;
+}
+
+/* Sötét mód (dark mode) stílusok */
+@media (prefers-color-scheme: dark) {
+  .search-form {
+    /* Sötétebb háttér és szegély sötét módban */
+    background-color: #333;
+    border-color: #555;
+  }
+
+  .form-group input {
+    /* Sötét háttér a beviteli mezőnek */
+    background-color: #444;
+    /* Sötétebb szegély, hogy illeszkedjen a sötét témához */
+    border-color: #666;
+    /* Világos szöveg a jó olvashatóságért */
+    color: #f4f4f4;
+  }
+}

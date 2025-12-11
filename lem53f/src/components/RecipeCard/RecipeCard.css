@@ -1,0 +1,66 @@
+/* Egyetlen receptet megjelenítő kártya alap stílusa */
+.recipe-card {
+  /* Vékony keret a kártya körül */
+  border: 1px solid #ccc;
+  /* Lekerekített sarkok */
+  border-radius: 8px;
+  /* A túllógó tartalom elrejtése (pl. kép vágása a sarkoknál) */
+  overflow: hidden;
+  /* Jelzi, hogy a kártya kattintható elem */
+  cursor: pointer;
+  /* Világos háttérszín (világos módban) */
+  background-color: #fff;
+  /* Finom animáció a lebegtetésre (hover) – mozgatás és árnyék változás */
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* Enyhe alap árnyék, hogy kártyaszerű hatást keltsen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover állapot: „kiemelkedő” kártya vizuális effekt */
+.recipe-card:hover {
+  /* Kártya kicsit felfelé mozdul */
+  transform: translateY(-5px);
+  /* Erősebb, nagyobb árnyék (szürke árnyék) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* A recepthez tartozó kép a kártyán belül */
+.recipe-card-img {
+  /* A kártya teljes szélességét kitölti */
+  width: 100%;
+  /* Fix magasság a képek egységes méretéhez */
+  height: 200px;
+  /* A kép kitölti a rendelkezésre álló teret, a felesleget levágja */
+  object-fit: cover;
+  /* Blokk szintű elem, hogy ne hagyjon extra alatta lévő helyet */
+  display: block;
+}
+
+/* A recept címének stílusa a kártyán belül */
+.recipe-card-title {
+  /* Belső margó a szöveg körül */
+  padding: 1rem;
+  /* Felső/alsó margó eltávolítása az egységes elrendezésért */
+  margin: 0;
+  /* Kicsit nagyobb betűméret a kiemelésért */
+  font-size: 1.1rem;
+  /* Szöveg középre igazítása */
+  text-align: center;
+  /* Sötétszürke szövegszín (világos módban) */
+  color: #333;
+}
+
+/* Sötét mód (dark mode) stílusok */
+@media (prefers-color-scheme: dark) {
+  .recipe-card {
+    /* Sötétebb háttérszín, hogy illeszkedjen a dark témához */
+    background-color: #333;
+    /* Sötétebb szegélyszín */
+    border-color: #555;
+  }
+
+  .recipe-card-title {
+    /* Világos szöveg a sötét háttéren */
+    color: #f4f4f4;
+  }
+}

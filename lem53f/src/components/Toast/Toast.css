@@ -1,0 +1,85 @@
+/* Alap Toast doboz: lebeg a képernyő jobb alsó sarkában */
+.toast {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+  
+    max-width: 320px;
+    padding: 0.75rem 1rem;
+  
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+  
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  
+    /* Finom árnyék, hasonlóan a kártyákhoz */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+    /* Kicsit kisebb betűméret, visszafogott megjelenés */
+    font-size: 0.95rem;
+    color: #333;
+  
+    z-index: 9999; /* Mindig a tartalom fölött legyen */
+  }
+  
+  /* Üzenet szövegének stílusa */
+  .toast-message {
+    flex: 1;
+  }
+  
+  /* Bezáró gomb (kis "x" a jobb oldalon) */
+  .toast-close {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+  
+    color: #666;
+    transition: color 0.2s;
+  }
+  
+  .toast-close:hover {
+    color: #000;
+  }
+  
+  /* Típusonként eltérő bal oldali színes sáv + enyhe háttérszín */
+  
+  /* Sikeres művelet – zöld */
+  .toast-success {
+    border-left: 4px solid #28a745;
+  }
+  
+  /* Információs üzenet – kék */
+  .toast-info {
+    border-left: 4px solid #007bff;
+  }
+  
+  /* Hiba jelzés – piros (ha később szeretnéd használni) */
+  .toast-error {
+    border-left: 4px solid #dc3545;
+  }
+  
+  /* Sötét mód támogatása */
+  @media (prefers-color-scheme: dark) {
+    .toast {
+      background-color: #333;
+      border-color: #555;
+      color: #f4f4f4;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+  
+    .toast-close {
+      color: #ccc;
+    }
+  
+    .toast-close:hover {
+      color: #fff;
+    }
+  }

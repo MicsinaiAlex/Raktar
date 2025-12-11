@@ -1,0 +1,74 @@
+/* Felső navigációs sáv (header) fő konténere */
+.header-nav {
+  /* Vízszintes elrendezés a linkek számára */
+  display: flex;
+  /* Linkek középre igazítása vízszintesen */
+  justify-content: center;
+  /* Linkek közötti vízszintes térköz */
+  gap: 1.5rem;
+  /* Belső margó a navigációs sáv körül */
+  padding: 1rem;
+  /* Világos háttérszín (világos módban) */
+  background-color: #ffffff;
+  /* Alsó szegély a header és a tartalom elválasztására */
+  border-bottom: 2px solid #ddd;
+  /* Alsó margó, hogy a tartalom ne tapadjon közvetlenül a headerhez */
+  margin-bottom: 2rem;
+}
+
+/* Navigációs linkek alap stílusa */
+.header-link {
+  /* Aláhúzás eltávolítása (link jelleg visszafogása) */
+  text-decoration: none;
+  /* Kicsit nagyobb betűméret a jobb olvashatóságért */
+  font-size: 1.2rem;
+  /* Félkövér betűstílus a kiemeléshez */
+  font-weight: 600;
+  /* Alapszövegszín (sötétszürke) */
+  color: #333;
+  /* Belső margó – nagyobb kattintható terület */
+  padding: 0.5rem;
+  /* Alsó szegély: alapértelmezetten láthatatlan (átlátszó),
+     az aktív linknél lesz színes */
+  border-bottom: 2px solid transparent;
+  /* Szín- és szegélyszín-átmenet animáció hover/aktív állapotnál */
+  transition: color 0.2s, border-color 0.2s;
+}
+
+/* Link hover állapota: kiemelés kékkel */
+.header-link:hover {
+  color: #007bff;
+}
+
+/* Aktív (jelenlegi oldalnak megfelelő) link stílusa */
+.header-link.active {
+  /* Kék szín, hogy jelezze az aktuális nézetet */
+  color: #007bff;
+  /* Kék alsó szegély az aktív link vizuális jelöléséhez */
+  border-bottom-color: #007bff;
+}
+
+/* Sötét mód (dark mode) stílusok */
+@media (prefers-color-scheme: dark) {
+  .header-nav {
+    /* Sötétebb háttér és szegély sötét módban */
+    background-color: #333;
+    border-bottom-color: #555;
+  }
+
+  .header-link {
+    /* Világos szöveg a sötét háttérhez */
+    color: #f4f4f4;
+  }
+
+  .header-link:hover {
+    /* Hover állapotban élénkebb kék sötét módban */
+    color: #00aaff;
+  }
+
+  .header-link.active {
+    /* Aktív link színe és alsó szegélye sötét témához igazítva */
+    color: #00aaff;
+    border-bottom-color: #00aaff;
+  }
+}

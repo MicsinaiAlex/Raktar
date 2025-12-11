@@ -1,0 +1,15 @@
+/* Hibaüzenetet megjelenítő doboz stílusa */
+.error-message {
+  /* Belső margó, hogy a szöveg ne tapadjon a doboz széléhez */
+  padding: 1rem;
+  /* Világos pirosas háttér, ami jelzi, hogy hibáról van szó */
+  background-color: #f8d7da;
+  /* Sötétebb piros szövegszín a jó kontraszthoz */
+  color: #721c24;
+  /* Finom, halvány piros keret a doboz körül */
+  border: 1px solid #f5c6cb;
+  /* Lekerekített sarkok */
+  border-radius: 8px;
+  /* Szöveg középre igazítása a dobozban */
+  text-align: center;
+}

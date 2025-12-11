@@ -1,0 +1,31 @@
+/* Kedvenc gomb (FavouriteButton) alap stílusa */
+.favourite-button {
+  /* Minimum szélesség: a gomb ne legyen túl keskeny rövid szöveg esetén sem */
+  min-width: 200px;
+}
+
+/* A "Remove From Favourites" gomb stílusa (piros verzió) */
+.favourite-button.remove {
+  /* Piros háttérszín a törlés / eltávolítás jelzésére */
+  background-color: #dc3545;
+  /* A keret színe megegyezik a háttérrel */
+  border-color: #dc3545;
+}
+
+/* "Remove" gomb hover állapota: kicsit sötétebb piros */
+.favourite-button.remove:hover {
+  background-color: #c82333;
+}
+
+/* Az "Add To Favourites" gomb stílusa (zöld verzió) */
+.favourite-button.add {
+  /* Zöld háttérszín a „hozzáadás” / „pozitív” akció jelzésére */
+  background-color: #28a745;
+  /* A keret színe megegyezik a háttérrel */
+  border-color: #28a745;
+}
+
+/* "Add" gomb hover állapota: kicsit sötétebb zöld */
+.favourite-button.add:hover {
+  background-color: #218838;
+}

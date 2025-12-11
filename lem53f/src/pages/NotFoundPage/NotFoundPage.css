@@ -1,0 +1,34 @@
+/* A 404 / Not Found oldal fő konténere */
+.not-found-page {
+    /* Középre igazított tartalom */
+    text-align: center;
+    /* Függőleges / vízszintes belső margó */
+    padding: 3rem 1rem;
+  }
+  
+  /* Fő cím (headline) a 404 oldalon */
+  .not-found-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    /* Sötétszürke szöveg (világos módban) */
+    color: #333;
+  }
+  
+  /* Rövid magyarázó szöveg a cím alatt */
+  .not-found-subtitle {
+    font-size: 1.1rem;
+    /* Világosabb szürke szín az alcímhez */
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Sötét mód (dark mode) támogatása */
+  @media (prefers-color-scheme: dark) {
+    .not-found-title {
+      color: #f4f4f4;
+    }
+  
+    .not-found-subtitle {
+      color: #ccc;
+    }
+  }

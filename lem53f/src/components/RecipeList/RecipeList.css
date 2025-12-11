@@ -1,0 +1,19 @@
+/* Receptek listájának konténere (kártyák rácsszerű elrendezéséhez) */
+.recipe-list {
+  /* CSS Grid használata a kártyák elrendezéséhez */
+  display: grid;
+
+  /* 
+    Dinamikus oszlopszám:
+    - `repeat(auto-fill, minmax(250px, 1fr))` azt jelenti, hogy
+      annyi oszlopot hoz létre, amennyi elfér a rendelkezésre álló szélességen,
+      ahol:
+        - minden oszlop legalább 250px széles,
+        - de ha több hely van, akár 1fr (egyforma arányos szélesség) is lehet.
+    - Ez reszponzív gridet eredményez: kisebb képernyőn kevesebb oszlop, nagyobbon több.
+  */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  /* Kártyák (grid elemek) közötti vízszintes és függőleges térköz */
+  gap: 1.5rem;
+}

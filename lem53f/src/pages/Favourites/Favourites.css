@@ -1,0 +1,138 @@
+/* A kedvencek listájának konténere: egymás alatt elhelyezkedő kártyák */
+.favourites-list {
+  /* Rugalmas elrendezés, hogy a kártyák egymás alatt jelenjenek meg */
+  display: flex;
+  flex-direction: column;
+  /* Kártyák közötti függőleges térköz */
+  gap: 1.5rem;
+}
+
+/* Egyetlen kedvenc kártya konténere */
+.favourite-card {
+  /* A kép és a szöveges rész egymás mellett jelenjen meg */
+  display: flex;
+  gap: 1.5rem;
+  /* Világos háttér a kártyának (világos módban) */
+  background-color: #fff;
+  /* Finom szegély a kártya körül */
+  border: 1px solid #ddd;
+  /* Lekerekített sarkok */
+  border-radius: 8px;
+  /* Ha valami túllógna, vágjuk le (pl. lekerekített sarkoknál) */
+  overflow: hidden;
+  /* Belső térköz a tartalom körül */
+  padding: 1rem;
+}
+
+/* Kedvenc kép stílusa a kártyán belül */
+.favourite-img {
+  /* Fix szélesség és magasság, hogy egységes legyen a megjelenés */
+  width: 150px;
+  height: 150px;
+  /* A kép kitölti a rendelkezésre álló teret, megtartva az arányokat */
+  object-fit: cover;
+  /* Enyhe kerekítés a kép sarkain */
+  border-radius: 4px;
+  /* Jelzés, hogy kattintható (részletező oldalra visz) */
+  cursor: pointer;
+}
+
+/* A kártya szöveges tartalmának konténere */
+.favourite-content {
+  /* A szöveges rész foglalja el a maradék helyet a flex sorban */
+  flex: 1;
+}
+
+/* Kedvenc recept címe a kártyán belül */
+.favourite-content h3 {
+  /* Felső margó eltávolítása a szorosabb elrendezésért */
+  margin-top: 0;
+  /* Kattinthatóvá tesszük (részletező oldalra navigál) */
+  cursor: pointer;
+  /* Kék szín a link-jelleg erősítésére */
+  color: #007bff; /* Kék */
+}
+
+/* Cím hover állapota: hangsúlyozás aláhúzással */
+.favourite-content h3:hover {
+  text-decoration: underline;
+}
+
+/* Megjelenített komment blokk a kártyán belül */
+.comment-display {
+  /* Világos háttér a komment kiemeléséhez */
+  background-color: #f9f9f9;
+  /* Bal oldali színes sáv a komment vizuális kiemeléséhez */
+  border-left: 4px solid #007bff; /* Kék */
+  /* Belső margó a szöveg körül */
+  padding: 0.5rem 1rem;
+  /* Dőlt betűstílus, hogy elkülönüljön a többi szövegtől */
+  font-style: italic;
+  /* Enyhe sarkítás */
+  border-radius: 4px;
+}
+
+/* Komment űrlap textarea mezőjének stílusa */
+.comment-form textarea {
+  /* Teljes szélesség kitöltése a konténerben */
+  width: 100%;
+  /* Minimális magasság, hogy kényelmesen írható legyen */
+  min-height: 60px;
+  /* Belső margó a szöveg körül */
+  padding: 0.5rem;
+  /* Vékony szegély a mező körül */
+  border: 1px solid #ccc;
+  /* Lekerekített sarkok */
+  border-radius: 4px;
+  /* Alsó margó az alatta lévő gomboktól való elválasztáshoz */
+  margin-bottom: 0.5rem;
+  /* A padding-et is vegye figyelembe a 100% szélességnél */
+  box-sizing: border-box; /* Fontos a 100% szélességhez */
+}
+
+/* Komment műveletek (mentés, mégse) és kedvenc műveletek (komment, törlés) gombjainak konténere */
+.comment-actions,
+.favourite-actions {
+  /* Gombok egymás mellett sorban */
+  display: flex;
+  /* Gombok közötti vízszintes térköz */
+  gap: 0.5rem;
+}
+
+/* Kedvenc eltávolító gomb speciális színei */
+.favourite-actions .remove-btn {
+  /* Piros háttérszín a törlésre utalva */
+  background-color: #dc3545; /* Piros */
+}
+
+/* Törlés gomb hover állapota: sötétebb piros */
+.favourite-actions .remove-btn:hover {
+  background-color: #c82333; /* Sötétebb piros */
+}
+
+/* Sötét módhoz kapcsolódó stílusok */
+@media (prefers-color-scheme: dark) {
+  /* Kedvenc kártya sötét módban */
+  .favourite-card {
+    background-color: #333;
+    border-color: #555;
+  }
+
+  /* Recept cím színe sötét módban: élénkebb kék */
+  .favourite-content h3 {
+    color: #00aaff;
+  }
+
+  /* Komment blokk sötét módban */
+  .comment-display {
+    background-color: #444;
+    border-color: #00aaff;
+  }
+
+  /* Komment textarea sötét módban: sötétebb háttér, világos szöveg */
+  .comment-form textarea {
+    background-color: #555;
+    border-color: #777;
+    color: #f4f4f4;
+  }
+}

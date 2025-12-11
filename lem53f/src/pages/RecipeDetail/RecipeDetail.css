@@ -1,0 +1,109 @@
+/* Recept részletező oldal fő konténere */
+.recipe-detail-page {
+  /* Alsó belső margó, hogy legyen tér a tartalom alatt is */
+  padding-bottom: 3rem;
+}
+
+/* Fejléc rész a részletező oldalon (Back gomb + Favourite gomb) */
+.detail-header {
+  /* Vízszintes elrendezés (flexbox) */
+  display: flex;
+  /* Elemek széthúzása: egyik balra, másik jobbra */
+  justify-content: space-between;
+  /* Függőleges középre igazítás */
+  align-items: center;
+  /* Tördelés engedélyezése kisebb képernyőkön */
+  flex-wrap: wrap;
+  /* Elemek közötti térköz */
+  gap: 1rem;
+  /* Alsó margó a tartalomtól való elválasztáshoz */
+  margin-bottom: 1.5rem;
+}
+
+/* Vissza gomb (Back) speciális színezése */
+.back-button {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* Back gomb hover állapota: kicsit sötétebb szín */
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Recept címe a részletező oldalon */
+.detail-title {
+  /* Középre igazított cím */
+  text-align: center;
+  /* Nagyobb betűméret a kiemeléshez */
+  font-size: 2.5rem;
+}
+
+/* Recept képe a részletező oldalon */
+.detail-image {
+  /* Rugalmas szélesség: 100% a konténeren belül */
+  width: 100%;
+  /* Max szélesség nagyobb kijelzőkön: ne nőjön túl nagyra */
+  max-width: 600px;
+  /* Arányos magasság */
+  height: auto;
+  /* Blokk szintű elem, hogy a margin auto működjön */
+  display: block;
+  /* Kép középre igazítása és alsó margó */
+  margin: 0 auto 2rem auto;
+  /* Lekerekített sarkok */
+  border-radius: 8px;
+}
+
+/* A hozzávalók és instrukciók közös konténere */
+.detail-content {
+  /* Grid alapú elrendezés */
+  display: grid;
+  /* Alapértelmezett: egy oszlop (mobil nézet) */
+  grid-template-columns: 1fr;
+  /* Rácselemek közötti térköz */
+  gap: 2rem;
+}
+
+/* Közepes/nagyobb képernyők esetén (tablet/desktop) */
+@media (min-width: 768px) {
+  /* Nagyobb képernyőn 1/3 - 2/3 arány a hozzávalók és leírás között */
+  .detail-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Hozzávalók listájának stílusai */
+.detail-ingredients ul {
+  /* Lista jelölők eltávolítása (nincs bullet) */
+  list-style-type: none;
+  /* Bal oldali belső margó eltávolítása */
+  padding-left: 0;
+}
+
+/* Egyedi hozzávaló sor stílusa */
+.detail-ingredients li {
+  /* Függőleges térköz soronként */
+  padding: 0.5rem;
+  /* Szaggatott alsó elválasztó vonal a sorok között */
+  border-bottom: 1px dashed #ccc;
+}
+
+/* Az utolsó hozzávaló sor alól eltávolítjuk a vonalat */
+.detail-ingredients li:last-child {
+  border-bottom: none;
+}
+
+/* Elkészítési leírás (instructions) szöveg stílusa */
+.detail-instructions {
+  /* Kényelmesebb sortávolság a hosszabb szöveghez */
+  line-height: 1.7;
+}
+
+/* Sötét módhoz kapcsolódó finomhangolás */
+@media (prefers-color-scheme: dark) {
+  .detail-ingredients li {
+    /* Sötétebb elválasztó vonal, hogy illeszkedjen a sötét háttérhez */
+    border-bottom-color: #555;
+  }
+}
